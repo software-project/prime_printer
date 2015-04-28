@@ -5,6 +5,7 @@ module PrimePrinter
       @data = data
     end
 
+    # Renders result table
     def render
       table = Terminal::Table.new :headings => get_header, :rows => get_rows
       puts table

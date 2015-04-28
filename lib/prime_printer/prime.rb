@@ -1,4 +1,5 @@
 module PrimePrinter
+  # Handles prime number calculations
   class Prime
 
     # CLASS METHODS
