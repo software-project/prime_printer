@@ -4,9 +4,9 @@ require 'prime_printer/printer'
 describe PrimePrinter::Printer do
   let(:header){ [1, 2, 3] }
   subject{
-    printer = double('printer')
-    allow(printer).to receive(:get_element_at).and_return '1'
-    PrimePrinter::Printer.new header, printer
+    data = double('data')
+    allow(data).to receive(:get_element_at).and_return '1'
+    PrimePrinter::Printer.new header, data
   }
 
   context '#get_header' do
@@ -25,7 +25,7 @@ describe PrimePrinter::Printer do
       expect(subject.get_rows.first.size).to eq(4)
     end
 
-    it 'should add elements from printer' do
+    it 'should add elements from data' do
       expect(subject.get_rows.first).to include('1')
     end
 
